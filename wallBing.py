@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import os
 import sys
 import requests
@@ -17,7 +16,7 @@ def get_feed(country: str) -> list:
     url = f"{FEED_URL}{country}"
     response = requests.get(url, headers=HEADERS)
     response.raise_for_status()
-    return response.json()  # Es una lista, no un dict
+    return response.json()
 
 def download_wallpaper(item: dict, wallpapers_dir: Path) -> Path:
     """Descarga la imagen si no existe aún"""
